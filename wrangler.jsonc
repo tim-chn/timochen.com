@@ -1,0 +1,26 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "timchen",
+    "compatibility_date": "2026-02-19",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "main": "@tanstack/react-start/server-entry",
+    "assets": {
+        "directory": "./public/"
+    },
+    "observability": {
+        "enabled": true
+    },
+    "workers_dev": true,
+    "routes": [
+        {
+            "pattern": "timochen.com",
+            "custom_domain": true
+        },
+        {
+            "pattern": "www.timochen.com",
+            "custom_domain": true
+        }
+    ]
+}
