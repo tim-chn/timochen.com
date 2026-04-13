@@ -9,7 +9,7 @@ export const profile = {
     contact: {
         email: 'timothy.chen5@alumnimail.pepperdine.edu',
         linkedin: 'https://www.linkedin.com/in/timochen',
-        resume: '/Timothy Chen Resume.pdf',
+        resume: 'https://tim-chn.github.io/Timothy%20Chen%20Resume.pdf',
     },
     highlights: [
         {
@@ -70,7 +70,7 @@ export const profile = {
         },
         {
             date: '12/2022',
-            parts: [{ text: 'Paper', href: '/CV_Plant_Cell_Detection_compressed.pdf' }, ' on deep learning for ecology applications'],
+            parts: [{ text: 'Paper', href: 'https://tim-chn.github.io/CV_Plant_Cell_Detection.pdf' }, ' on deep learning for ecology applications'],
         },
         {
             date: '11/2022',

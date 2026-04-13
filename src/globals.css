@@ -1,26 +1,36 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --bg: #ffffff;
-  --text: #333333;
+  --text: #1a1a1a;
   --text-muted: #666666;
-  --border: #e0e0e0;
-  --link: #333333;
+  --border: #e5e5e5;
+  --link: #1a1a1a;
   --link-hover: #000000;
+  --accent: #2563eb;
+  --hover-bg: #f5f5f5;
+  --header-bg: rgba(255, 255, 255, 0.85);
 }
 
 .dark {
-  --bg: #1a1a1a;
+  --bg: #111111;
   --text: #ededed;
-  --text-muted: #aaaaaa;
-  --border: #333333;
+  --text-muted: #999999;
+  --border: #2a2a2a;
   --link: #ededed;
   --link-hover: #ffffff;
+  --accent: #60a5fa;
+  --hover-bg: #1e1e1e;
+  --header-bg: rgba(17, 17, 17, 0.85);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,13 +41,64 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: var(--link);
   text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--accent);
+}
+
+/* Sticky header blur */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* Highlight row hover */
+.highlight-row {
+  padding: 0.5em 0.6em;
+  margin: 0 -0.6em;
+  border-radius: 6px;
+  transition: background 0.15s;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.75em;
+  align-items: baseline;
+}
+
+.highlight-row:hover {
+  background: var(--hover-bg);
+}
+
+/* Scroll fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
