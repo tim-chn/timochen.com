@@ -62,7 +62,7 @@ export const profile = {
         },
         {
             date: '04/2023',
-            parts: [{ text: 'Paper', href: '/Clustering_Application_Project.pdf' }, ' on language processing for research publications'],
+            parts: ['Paper on language processing for research publications'],
         },
         {
             date: '04/2023',
@@ -70,7 +70,7 @@ export const profile = {
         },
         {
             date: '12/2022',
-            parts: [{ text: 'Paper', href: '/CV_Plant_Cell_Detection.pdf' }, ' on deep learning for ecology applications'],
+            parts: [{ text: 'Paper', href: '/CV_Plant_Cell_Detection_compressed.pdf' }, ' on deep learning for ecology applications'],
         },
         {
             date: '11/2022',

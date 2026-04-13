@@ -12,7 +12,7 @@ export const Route = createRootRoute({
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { name: 'description', content: 'Timothy Chen — student and engineer.' },
         ],
-        links: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+        links: [{ rel: 'icon', href: 'data:,' }],
     }),
     component: RootComponent,
     notFoundComponent: () => (
