@@ -65,6 +65,7 @@ a:hover {
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s, border-color 0.3s;
+  overflow: hidden;
 }
 
 /* Highlight row hover */

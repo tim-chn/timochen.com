@@ -9,6 +9,7 @@ export const profile = {
     contact: {
         email: 'timothy.chen5@alumnimail.pepperdine.edu',
         linkedin: 'https://www.linkedin.com/in/timochen',
+        github: 'https://github.com/tim-chn',
         resume: 'https://tim-chn.github.io/Timothy%20Chen%20Resume.pdf',
     },
     highlights: [

@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { profile } from '@/src/content/profile'
+import { Sun, Moon } from 'lucide-react'
 
 function useDark() {
     const [dark, setDarkState] = useState(false)
@@ -38,14 +38,12 @@ export function Header() {
                 </Link>
                 <Link to="/" style={navLink(pathname === '/')}>about</Link>
                 <Link to="/projects" style={navLink(pathname === '/projects')}>projects</Link>
-                <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer" style={navLink(false)}>linkedin</a>
-                <a href={profile.contact.resume} target="_blank" rel="noopener noreferrer" style={navLink(false)}>resume</a>
                 <button
                     onClick={() => setDark(!dark)}
                     aria-label="Toggle dark mode"
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '4px', color: 'var(--text-muted)' }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}
                 >
-                    {dark ? '○' : '●'}
+                    {dark ? <Sun size={16} /> : <Moon size={16} />}
                 </button>
             </div>
         </header>

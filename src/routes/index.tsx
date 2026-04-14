@@ -2,6 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useRef } from 'react'
 import { profile } from '@/src/content/profile'
 import { Header } from '@/src/components/Header'
+import { FileText } from 'lucide-react'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export const Route = createFileRoute('/')({
     component: Home,
@@ -73,7 +75,7 @@ function Home() {
                     </p>
                     <p style={{ margin: 0, fontSize: '0.95em', lineHeight: 1.7 }}>
                         Hi, I'm Tim — a student and engineer. Let's connect at{' '}
-                        <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>.
+                        <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
                     </p>
                 </section>
 
@@ -90,7 +92,12 @@ function Home() {
             </main>
 
             <footer style={{ borderTop: '1px solid var(--border)', padding: '1.5em', textAlign: 'center' }}>
-                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85em' }}>© 2025 Timothy Chen</p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25em', marginBottom: '0.5em' }}>
+                    <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}><FaLinkedin size={16} /></a>
+                    <a href={profile.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}><FaGithub size={16} /></a>
+                    <a href={profile.contact.resume} target="_blank" rel="noopener noreferrer" aria-label="Resume" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center' }}><FileText size={16} /></a>
+                </div>
+                <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85em' }}>© 2026 Timothy Chen</p>
             </footer>
         </>
     )
