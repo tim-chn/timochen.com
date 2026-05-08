@@ -1,5 +1,6 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
 import { HeadContent, Scripts } from '@tanstack/react-router'
+import { useEffect, useRef } from 'react'
 
 import '../globals.css'
 
@@ -29,17 +30,35 @@ export const Route = createRootRoute({
 })
 
 function RootComponent() {
+    const { pathname } = useLocation()
+    const ref = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        el.style.transition = 'none'
+        el.style.opacity = '0'
+        el.style.transform = 'translateY(6px)'
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
+            el.style.opacity = '1'
+            el.style.transform = 'translateY(0)'
+        }))
+    }, [pathname])
+
     return (
         <html lang="en">
             <head>
                 <HeadContent />
                 {/* Prevent dark mode flash */}
                 <script dangerouslySetInnerHTML={{
-                    __html: `(function(){try{if(localStorage.getItem('dark')==='true')document.documentElement.classList.add('dark')}catch(e){}})()`
+                    __html: `(function(){try{var d=localStorage.getItem('dark');if(d===null||d==='true')document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`
                 }} />
             </head>
             <body>
-                <Outlet />
+                <div ref={ref}>
+                    <Outlet />
+                </div>
                 <Scripts />
             </body>
         </html>

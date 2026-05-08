@@ -6,7 +6,7 @@ function useDark() {
     const [dark, setDarkState] = useState(false)
 
     useEffect(() => {
-        setDarkState(document.documentElement.classList.contains('dark'))
+        setDarkState(localStorage.getItem('dark') !== 'false')
     }, [])
 
     function setDark(val: boolean) {
@@ -36,8 +36,8 @@ export function Header() {
                 <Link to="/" style={{ fontWeight: 700, fontSize: '1em', marginRight: 'auto', textDecoration: 'none', color: 'var(--text)' }}>
                     timochen.com
                 </Link>
-                <Link to="/" style={navLink(pathname === '/')}>about</Link>
-                <Link to="/projects" style={navLink(pathname === '/projects')}>projects</Link>
+                <Link to="/" className="nav-link" style={navLink(pathname === '/')}>about</Link>
+                <Link to="/projects" className="nav-link" style={navLink(pathname === '/projects')}>projects</Link>
                 <button
                     onClick={() => setDark(!dark)}
                     aria-label="Toggle dark mode"

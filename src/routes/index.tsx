@@ -69,10 +69,15 @@ function Home() {
             <main style={{ maxWidth: '800px', margin: '0 auto', padding: '0 1.5em 4em' }}>
 
                 <section ref={aboutRef} className="fade-in" style={{ padding: '3em 0 2em', borderBottom: '1px solid var(--border)' }}>
-                    <h1 style={{ margin: '0 0 0.25em', fontSize: '1.4em', fontWeight: 700 }}>Timothy Chen</h1>
-                    <p style={{ margin: '0 0 0.5em', color: 'var(--text-muted)', fontSize: '0.95em' }}>
-                        Currently @ <strong style={{ color: 'var(--text)' }}>Amazon</strong>
-                    </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1em', marginBottom: '0.75em' }}>
+                        <img src="/IMG_6665.jpg" alt="Timothy Chen" style={{ width: '64px', height: '64px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'center 50%', flexShrink: 0 }} />
+                        <div>
+                            <h1 style={{ margin: '0 0 0.15em', fontSize: '1.4em', fontWeight: 700 }}>Timothy Chen</h1>
+                            <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.95em' }}>
+                                Currently @ <strong style={{ color: 'var(--text)' }}>Amazon</strong>
+                            </p>
+                        </div>
+                    </div>
                     <p style={{ margin: 0, fontSize: '0.95em', lineHeight: 1.7 }}>
                         Hi, I'm Tim — a student and engineer. Let's connect at{' '}
                         <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
